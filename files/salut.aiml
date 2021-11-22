@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>SALUT</pattern>
+        <template>
+            <random>
+                <li>Salut</li>
+                <li>Salutation</li>
+                <li>Bonjour</li>
+                <li>Bien le bonjour</li>
+            </random>
+            <condition name="user-name">
+                <li value="*"> <get name="user-name"></get>
+                    <random>
+                        <li></li>
+                        <li> 😀</li>
+                        <li> 😸</li>
+                    </random>
+                    . <srai>DEMANDE MOI COMMENT JE VAIS</srai>
+                </li>
+                <li> utilisateur. <srai>DEMANDE MOI MON NOM</srai></li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>SALUT BOT</pattern>
+        <template><srai>SALUT</srai></template>
+    </category>
+</aiml>
