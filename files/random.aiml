@@ -13,4 +13,29 @@
             </random>
         </template>
     </category>
+    
+    <category>
+        <pattern>PILE OU FACE</pattern>
+        <template>
+            <think><srai>0 OU 1</srai></think>
+            <condition name="bot-random">
+                <li val="0">PILE</li>
+                <li val="1">FACE</li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>0 OU 1</pattern>
+        <template>
+            <think>
+                <set name="bot-random">
+                    <random>
+                        <li>0</li>
+                        <li>1</li>
+                    </random>
+                </set>
+            </think>
+        </template>
+    </category>
 </aiml>

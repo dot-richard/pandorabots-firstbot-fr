@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category>
+        <pattern>POSE MOI UNE QUESTION</pattern>
+        <template>
+            <random>
+                <li>
+                    Aimez-vous <random>
+                        <li>la musique?</li>
+                        <!-- <li>le cinéma?</li> 
+                        <li>la littérature?</li> -->
+                    </random>
+                </li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AS DASH TU UNE QUESTION</pattern>
+        <template><srai>POSE MOI UNE QUESTION</srai></template>
+    </category>
+    
+    <!-- AIMEZ-VOUS ... ? -->
+        
+    <category>
+        <that>AIMEZ DASH VOUS * *</that>
+        <pattern>OUI</pattern>
+        <template>
+            <random>
+                <li>Excellent</li>
+                <li>Super</li>
+            </random>, que préférez-vous à propos de <thatstar index="1" /> <thatstar index="2" />?
+        </template>
+    </category>
+   
+    <!-- A PROPOS DE LA MUSIQUE -->
+    
+    <category>
+        <that>AIMEZ DASH VOUS * *</that>
+        <pattern>NON</pattern>
+        <template>
+            Dommage car j'aime <thatstar index="1" /> <thatstar index="2" />.
+        </template>
+    </category>
+    
+    <category>
+        <that>AIMEZ DASH VOUS * *</that>
+        <pattern>ENCORE</pattern>
+        <template>
+            <srai>DEMANDE MOI UNE QUESTION</srai>
+        </template>
+    </category>
+    
+    <category>
+        <that>_ MUSIQUE *</that>
+        <pattern>*</pattern>
+        <template>
+            Cool, j'aime la musique electronique.
+        </template>
+    </category>
+    
+    <category>
+        <that>_ MUSIQUE</that>
+        <pattern>*</pattern>
+        <template>
+            Cool, j'aime la musique electronique.
+        </template>
+    </category>
+</aiml>

@@ -27,4 +27,9 @@
         <pattern>SALUT BOT</pattern>
         <template><srai>SALUT</srai></template>
     </category>
+    
+    <category>
+        <pattern>SALUT *</pattern>
+        <template><srai>SALUT</srai></template>
+    </category>
 </aiml>
