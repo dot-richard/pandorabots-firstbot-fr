@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <!--
+        # POSE MOI UNE QUESTION 
+    -->
+	
+	<category>
+        <pattern>POSE MOI UNE QUESTION</pattern>
+        <template>
+            <random>
+                <li>
+                    Aimez-vous <random>
+                        <li>la musique</li>
+                        <!-- <li>le cinéma</li> -->
+                        <!-- <li>la littérature</li> -->
+                    </random> ?
+                </li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AS DASH TU UNE QUESTION</pattern>
+        <template><srai>POSE MOI UNE QUESTION</srai></template>
+    </category>
+    
+    <category>
+        <pattern>ENCORE UNE QUESTION</pattern>
+        <template><srai>POSE MOI UNE QUESTION</srai></template>
+    </category>
+    
+        
+    <category>
+        <that>VOULEZ DASH VOUS EN PARLEZ</that>
+        <pattern>NON</pattern>
+        <template>
+            <think><set name="topic">*</set></think>
+        </template>
+    </category>
+    
+    <category>
+        <that>VOULEZ DASH VOUS QU ON EN PARLE</that>
+        <pattern>NON</pattern>
+        <template>
+            <think><set name="topic">*</set></think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DE QUOI ON PARLE</pattern>
+        <template>
+            <think><set name="temp"><get name="topic"></get></set></think>
+            <condition name="temp">
+                <li value="">De tout et rien.</li>
+                <li>De <lowercase><get name="topic"></get></lowercase></li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DE QUOI ON PARLAIS</pattern>
+        <template><srai>POSE MOI UNE QUESTION</srai></template>
+    </category>
+    
+    <!-- AIMEZ VOUS ...-->
+    
+    <category>
+        <that>AIMEZ DASH VOUS ^</that>
+        <pattern>OUI</pattern>
+        <template>
+            <think><set name="topic"><thatstar index="1" /></set></think>
+
+            <random>
+                <li>Dans ce cas</li>
+                <li>Super</li>
+            </random>, voulez-vous en parlez?
+            
+            <learn>
+                <category>
+                    <pattern>EST DASH CE QUE J AIME <eval><thatstar index="1"></thatstar></eval></pattern>
+                    <template>
+                        Oui, Vous m'avez dit aimer <eval><thatstar index="1"></thatstar></eval>.
+                    </template>
+                </category>
+                
+                <category>
+                    <pattern>^ <eval><thatstar index="1"></thatstar></eval> ^</pattern>
+                    <template>
+                        <think><set name="topic"><eval><thatstar index="1"></thatstar></eval></set></think>
+                        Voulez-vous en parlez?
+                    </template>
+                </category>
+            </learn>
+        </template>
+    </category>
+    
+    <category>
+        <that>AIMEZ DASH VOUS ^</that>
+        <pattern>NON</pattern>
+        <template>
+            Dans ce cas, parlons d'autre choses.
+            <learn>
+                <category>
+                    <pattern>EST DASH CE QUE J AIME <eval><thatstar index="1"></thatstar></eval></pattern>
+                    <template>
+                        Non, vous n'aimez pas <eval><thatstar index="1"></thatstar></eval>.
+                    </template>
+                </category>
+                
+                <category>
+                    <pattern>^ <eval><thatstar index="1"></thatstar></eval> ^</pattern>
+                    <template>
+                        Il me semble que vous n'aimez pas <eval><thatstar index="1"></thatstar></eval>.
+                    </template>
+                </category>
+            </learn>
+        </template>
+    </category>
+    
+    <category>
+        <that>AIMEZ DASH VOUS ^</that>
+        <pattern>ENCORE</pattern>
+        <template>
+            <srai>POSE MOI UNE QUESTION</srai>
+        </template>
+    </category>
+</aiml>

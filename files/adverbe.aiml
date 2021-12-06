@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+        
+	<!-- insert your AIML categories here -->
+	
+	<category>
+	    <pattern>BON ET SINON _</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>SINON _</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>_ SINON</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>ET _</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>AINSI _</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>DONC _</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>MAIS _</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+</aiml>

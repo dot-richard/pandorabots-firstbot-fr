@@ -10,7 +10,8 @@
                 <li>Bien le bonjour</li>
             </random>
             <condition name="user-name">
-                <li value="*"> <get name="user-name"></get>
+                <li value="unknown"> utilisateur. Nous ne sommes pas encore présenter. <srai>DEMANDE MOI MON NOM</srai></li>
+                <li> <get name="user-name"></get>
                     <random>
                         <li></li>
                         <li> 😀</li>
@@ -18,18 +19,95 @@
                     </random>
                     . <srai>DEMANDE MOI COMMENT JE VAIS</srai>
                 </li>
-                <li> utilisateur. <srai>DEMANDE MOI MON NOM</srai></li>
             </condition>
         </template>
     </category>
     
     <category>
-        <pattern>SALUT BOT</pattern>
-        <template><srai>SALUT</srai></template>
+        <pattern>SALUT *</pattern>
+        <template>
+            <srai>QUI EST <star/></srai>
+        </template>
     </category>
     
     <category>
-        <pattern>SALUT *</pattern>
-        <template><srai>SALUT</srai></template>
+        <pattern>SALUT <bot name="name"></bot></pattern>
+        <template>
+            <srai>SALUT</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>SALUT BOT</pattern>
+        <template>
+            <srai>SALUT</srai>
+        </template>
+    </category>
+    
+    <!-- 
+        # AU REVOIR 
+    -->
+    
+    <category>
+        <pattern>AU REVOIR</pattern>
+        <template>
+            <random>
+                <li>Au revoir!</li>
+                <li>A bientôt!</li>
+            </random>
+            <random>
+                <li></li>
+                <li> 👋</li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AU REVOIR *</pattern>
+        <template>
+            <srai>QUI EST <star/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AU REVOIR <bot name="name"></bot></pattern>
+        <template>
+            <srai>AU REVOIR</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AU REVOIR BOT</pattern>
+        <template>
+            <srai>AU REVOIR</srai>
+        </template>
+    </category>
+   
+    <category>
+        <pattern>AUREVOIR</pattern>
+        <template>
+            <srai>AU REVOIR</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AUREVOIR *</pattern>
+        <template>
+            <srai>AU REVOIR <star/></srai>
+        </template>
+    </category>
+        
+    <category>
+        <pattern>BYE</pattern>
+        <template>
+            <srai>AU REVOIR</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>BYE *</pattern>
+        <template>
+            <srai>AU REVOIR <star/></srai>
+        </template>
     </category>
 </aiml>

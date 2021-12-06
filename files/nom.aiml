@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+	<!-- insert your AIML categories here -->
+	
+	<category>
+        <pattern>DEMANDE MOI MON NOM</pattern>
+        <template>
+            <random>
+                <li>
+                    Quel est votre nom?   
+                </li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>QUEL EST MON NOM</pattern>
+        <template>
+            <condition name="user-name">
+                <li value="unknown">
+                    Nous ne sommes pas encore pleinement présenter. <srai>DEMANDE MOI MON NOM</srai>
+                </li>
+                <li>
+                    Votre nom est <get name="user-name"></get>. <srai>MON NOM EST <get name="user-name"></get></srai>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>VRAIMENT</pattern>
+        <that>Vous avez le même prénom que mon créateur</that>
+        <template>Bien sur!</template>
+    </category>
+    
+    <category>
+        <pattern>MON NOM EST _</pattern>
+        <template>
+            <think><set name="user-name"><formal><star/></formal></set></think>
+            Enchanté <condition name="user-name">
+                <li value="unknown">
+                    Je ne comprends pas. <srai>DEMANDE MOI MON NOM</srai>
+                </li>
+                <li><get name="user-name"></get>. <condition name="user-name">
+                        <li value="RICHARD">
+                            Vous avez le même prénom que mon créateur.
+                        </li>
+                        <li value="SIGH">
+                            Vous avez le même prénom que mon créateur.
+                        </li>
+                        <li></li>
+                    </condition> 
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <that>QUEL EST VOTRE NOM</that>
+        <pattern>*</pattern>
+        <template>
+            <srai>MON NOM EST <star/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>MON NOM EST</pattern>
+        <template>
+            <srai>MON NOM EST UNKNOWN</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>JE M APPELLE _</pattern>
+        <template>
+            <srai>MON NOM EST <star/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>JE M APPELLE</pattern>
+        <template>
+            <srai>MON NOM EST UNKNOWN</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>JE SUIS _</pattern>
+        <template>
+            <srai>MON NOM EST <star/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>JE SUIS</pattern>
+        <template>
+            <srai>MON NOM EST UNKNOWN</srai>
+        </template>
+    </category>
+    
+</aiml>

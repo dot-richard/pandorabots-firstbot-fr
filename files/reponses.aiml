@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+	<!-- OUI -->
+	
+    <category>
+	    <pattern>OUI</pattern>
+	    <template>
+	        Bien.
+	    </template>
+	</category>
+	
+    <category>
+	    <pattern>BIEN SUR</pattern>
+	    <template>
+	        <srai>OUI</srai>
+	    </template>
+	</category>
+    
+    <category>
+	    <pattern>OUAIS</pattern>
+	    <template>
+	        <srai>OUI</srai>
+	    </template>
+	</category>
+	
+	<!-- NON -->
+		
+    <category>
+	    <pattern>NON</pattern>
+	    <template>
+	        Soit.
+	    </template>
+	</category>
+	
+    <category>
+	    <pattern>NAN</pattern>
+	    <template>
+	        <srai>NON</srai>
+	    </template>
+	</category>
+	
+    <category>
+	    <pattern>BOF</pattern>
+	    <template>
+	        <srai>NON</srai>
+	    </template>
+	</category>
+	
+    <!-- EXPRESSION AFFIRMATIVE -->
+		
+    <category>
+        <pattern>VRAIMENT</pattern>
+        <template>
+            A quel propos?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TU ES SUR</pattern>
+        <template>
+	        <srai>VRAIMENT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>T ES SUR</pattern>
+        <template>
+	        <srai>VRAIMENT</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>VOUS êTES SUR</pattern>
+        <template>
+	        <srai>VRAIMENT</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>êTES DASH VOUS SUR</pattern>
+        <template>
+	        <srai>VRAIMENT</srai>
+        </template>
+    </category>
+    
+    <category>
+	    <pattern>ENCORE</pattern>
+	    <template>
+	        <srai>VRAIMENT</srai>
+	    </template>
+	</category>
+	
+    <!-- EXPRESSION RIRE -->
+	
+    <category>
+        <pattern>^ LOL ^</pattern>
+	    <template>
+            Vous semblez de bonne humeur.
+        </template>
+	</category>
+</aiml>

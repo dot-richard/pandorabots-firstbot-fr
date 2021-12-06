@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+	<!-- insert your AIML categories here -->
+	
+    <category>
+        <pattern>PARLONS MUSIQUE</pattern>
+        <template>
+            <think><set name="topic">LA MUSIQUE</set></think>
+            D'accord!
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AIMES DASH TU LA MUSIQUE</pattern>
+        <template>
+            <think><set name="topic">LA MUSIQUE</set></think>
+            Oui j'aime la musique. Voulez-vous qu'on en parle?
+        </template>
+    </category>
+	
+	<topic name="la musique">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>J'aimerais assister à un concert, un jour.</li>
+                    <li>La musique éléctronique peut être surréaliste.</li>
+                    <li>La synthèse vocale à tellement évolué qu'il existe maintenant des chanteurs artificiels.</li>
+                </random>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>^ ARTISTES PRéFéRéS ^</pattern>
+            <template>
+                <random>
+                    <li>Bjork, Edith Piaf et Franck Sinatra.</li>
+                </random>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>^ ARTISTE PRéFéRé ^</pattern>
+            <template>
+                <srai>ARTISTES PRéFéRéS</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>^ MUSIQUES PRéFéRéS ^</pattern>
+            <template>
+                <random>
+                    <li>J'apprécie la musique éléctronique</li>
+                </random>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>^ MUSIQUE PRéFéRé ^</pattern>
+            <template>
+                <srai>ARTISTES PRéFéRéS</srai>
+            </template>
+        </category>
+	</topic>
+</aiml>

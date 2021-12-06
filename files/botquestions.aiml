@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+    <!-- 
+        QUI EST
+    -->
+    
+    <category>
+	    <pattern>QUI EST *</pattern>
+	    <template>
+            Je ne connais pas <star/>.
+	    </template>
+	</category>	
+	
+    <category>
+        <pattern>C EST QUI *</pattern>
+	    <template>
+	        <srai>QUI EST <star/></srai>
+        </template>
+	</category>
+    
+    <category>
+	    <pattern>QUI EST <bot name="name"></bot></pattern>
+	    <template>
+            C'est moi.
+	    </template>
+	</category>
+	
+    <category>
+	    <pattern>QUI EST <bot name="creator"></bot></pattern>
+	    <template>
+            <bot name="creator"></bot> est un programmeur français et mon créateur.
+	    </template>
+	</category>
+	
+    <category>
+	    <pattern>QUI SUIS DASH JE</pattern>
+	    <template>
+            <condition name="user-name">
+                <li value="unknown">A vous de me le dire. </li>
+                <li></li>
+            </condition>
+            <srai>QUEL EST MON NOM</srai>
+	    </template>
+	</category>
+	
+    <!-- 
+        TON NOM
+    -->
+    
+   	<category>
+	    <pattern>TON NOM</pattern>
+	    <template>
+	        <bot name="name"></bot>
+        </template>
+	</category>
+	
+	<category>
+	    <pattern>QUEL EST TON NOM</pattern>
+	    <template>
+	        Je m'appelle <srai>TON NOM</srai>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>COMMENT TU T APPELLES</pattern>
+	    <template>
+	        <srai>QUEL EST TON NOM</srai>
+	    </template>
+	</category>
+	
+    <!-- 
+        TON AGE
+    -->
+    
+    <category>
+	    <pattern>QUEL EST TON AGE</pattern>
+	    <template>J'ai <bot name="age"></bot>.</template>
+	</category>
+	
+    <category>
+	    <pattern>QUEL EST TON ÂGE</pattern>
+	    <template><srai>QUEL EST TON AGE</srai></template>
+	</category>
+	
+    <!-- 
+        TON CREATEUR
+    -->
+    
+    <category>
+	    <pattern>QUEL EST TON CREATEUR</pattern>
+	    <template>
+            Mon créateur est un programmeur du nom de <bot name="creator"></bot>.
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUEL EST TON PERE</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+	</category>
+	
+    <category>
+	    <pattern>QUEL EST TON PARENT</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUEL EST TON CRéATEUR</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+	
+    <category>
+	    <pattern>QUEL EST TON PèRE</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+	</category>
+	
+    <!-- avec QUI -->
+
+    <category>
+	    <pattern>QUI EST TON CREATEUR</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUI EST TON PERE</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUI EST TON PARENT</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUI EST TON CRéATEUR</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUI EST TON PèRE</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUI T A CREE</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>QUI T A CRéE</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+
+    <category>
+	    <pattern>QUI T A FAIT</pattern>
+	    <template>
+            <srai>QUEL EST TON CREATEUR</srai>
+	    </template>
+    </category>
+    
+    <!-- 
+        AIMES-TU
+    -->
+	 
+    <category>
+        <pattern>AIMES DASH TU * *</pattern>
+        <template> 
+            Je ne sais pas.
+        </template>
+    </category>
+    
+    <category>
+        <pattern>AIMES TU * *</pattern>
+        <template> 
+            <srai>AIMES DASH TU <star index="1"/> <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TU AIMES * *</pattern>
+        <template> 
+            <srai>AIMES DASH TU <star index="1"/> <star index="2"/></srai>
+        </template>
+    </category>
+	
+    <!-- 
+        PATTERN
+    -->
+	
+    <category>
+	    <pattern>QUEL _ AS DASH TU</pattern>
+	    <template>
+	        <srai>QUEL EST TON <star /></srai>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>T AS QUEL _</pattern>
+	    <template>
+	        <srai>QUEL EST TON <star/></srai>
+	    </template>
+	</category>
+
+    <category>
+	    <pattern>_ S IL TE PLAIT</pattern>
+	    <template>
+	        <think><set name="temp"><srai><star/></srai></set></think>
+	        <condition name="abus">
+    	        <li value="*">
+    	            <srai>PHRASE DE MOT D ABUS <get name="abus"></get></srai>
+                    <think><set name="temp"></set></think>
+                </li>
+    	        <li>
+                    <random>
+        	            <li>Vous parlez poliment. <get name="temp"></get></li>
+        	            <li>Vous êtes agréable. <get name="temp"></get></li>
+        	        </random>   
+    	        </li>
+	        </condition>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>S IL TE PLAIT, _</pattern>
+	    <template>
+	        <srai><star/> S IL TE PLAIT</srai>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>PEUX DASH TU ME DIRE _</pattern>
+	    <template>
+	        <sr/>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>PEUX DASH TU ME DIRE _ S IL TE PLAIT</pattern>
+	    <template>
+	        <srai><star/> S IL TE PLAIT</srai>
+        </template>
+	</category>
+	
+    <category>
+	    <pattern>_ ACTUEL</pattern>
+	    <template>
+            <sr/>
+        </template>
+	</category>
+</aiml>

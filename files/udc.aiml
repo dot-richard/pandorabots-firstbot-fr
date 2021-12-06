@@ -5,13 +5,168 @@
     <category>
         <pattern>*</pattern>
         <template>
-            Je n'ai aucune réponse pour cela.
+            Je n'ai aucune réponse pour cela, désolé.
+        </template>
+    </category>
+    
+    <!-- 
+        Wildcards (demo)
+    -->
+    
+    <category>
+        <pattern># MOT #</pattern>
+        <template>Diez mot!</template>
+    </category>
+    
+    <category>
+        <pattern>$UN MOT #</pattern>
+        <template>UN Mot!</template>
+    </category>
+    
+    <category>
+        <pattern>TESTE * * * * * * * * * *</pattern>
+        <template>OK</template>
+    </category>
+    
+    <!-- 
+        MAP & SET (demo)
+    -->
+    
+    <category>
+        <pattern>MA COULEUR ^ EST LE *</pattern>
+        <template>
+            Je ne crois pas que ce soit une couleur.
         </template>
     </category>
 
+    <category>
+        <pattern>MA COULEUR ^ EST LE <set>COULEURS</set></pattern>
+        <template>
+            Ok! J'aime bien cette couleur aussi.
+        </template>
+    </category>
+    
+    <category>
+        <pattern>QU EST CE QUI EST <set>COULEURS</set></pattern>
+        <template>
+            <map name="couleursobjets"><star /></map>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* EST UN NOMBRE</pattern>
+        <template>
+            Non, ce n'est pas un nombre.
+        </template>
+    </category>
+    
+    <category>
+        <pattern><set>NUMBER</set> EST UN NOMBRE</pattern>
+        <template>
+            Oui, c'est un nombre.
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DASH <set>NUMBER</set> EST UN NOMBRE</pattern>
+        <template>
+            <srai><star/> EST UN NOMBRE</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>COMPTE JUSQU A <set>NUMBER</set></pattern>
+        <template>
+            <srai>COMPTE DE 1 à <star /></srai>
+        </template>
+    </category>
+        
+    <category>
+        <pattern>COMPTE JUSQU A <set>NUMBER</set> PAR 2</pattern>
+        <template>
+            <think>
+                <set name="count">0</set>
+            </think>
+            <condition name="count">
+                <li><value><star /></value></li>
+                <li>
+                    <think>
+                        <set name="count">
+                            <map name="successor"><get name="count"></get></map>
+                        </set>
+                    </think>
+                    <set name="count">
+                        <map name="successor"><get name="count"></get></map>
+                    </set>
+                    <break/>
+                    <loop />
+                </li>
+            </condition>
+        </template>
+    </category>
+        
+    <category>
+        <pattern>COMPTE DE <set>NUMBER</set> A <set>NUMBER</set></pattern>
+        <template>
+            <set name="count"><star index="1" /></set><break/>
+            <condition name="count">
+                <li><value><star index="2"/></value></li>
+                <li>
+                    <set name="count">
+                        <map name="successor"><get name="count"></get></map>
+                    </set>
+                    <break/>
+                    <loop />
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DéCOMPTE A PARTIR DE <set>NUMBER</set></pattern>
+        <template>
+            <set name="count"><star /></set><break/>
+            <condition name="count">
+                <li><value>0</value></li>
+                <li>
+                    <set name="count">
+                        <map name="predecessor"><get name="count"></get></map>
+                    </set>
+                    <break/>
+                    <loop />
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>LOOP COMPTER</pattern>
+        <template>
+            <set name="count"><map name="successor"><get name="count"></get></map></set>
+            <condition name="count">
+                <li><value><get name="target" /></value></li>
+                <li><srai>LOOP COMPTER</srai></li>
+            </condition>
+        </template>
+    </category>
+    
     <!-- 
-        UDEMY DEMO
+        COMMENT CA VA (demo)
     -->
+    
+    <category>
+        <pattern>DEMANDE MOI COMMENT JE VAIS</pattern>
+        <template>
+            <condition name="user-humeur">
+                <li value="*">
+                    Vous sentez-vous toujours <get name="user-humeur"></get>?
+                </li>
+                <li>
+                    Comment allez-vous?
+                </li>
+            </condition>
+        </template>
+    </category>
     
     <category>
         <pattern>COMMENT ALLEZ VOUS</pattern>
@@ -46,10 +201,5 @@
     <category>
         <pattern>COMMENT TU VAS</pattern>
         <template><srai>COMMENT ALLEZ VOUS</srai></template>
-    </category>
-    
-    <category>
-        <pattern>JE SUIS *</pattern>
-        <template>Enchante <set name="user-name"><star/></set>.</template>
     </category>
 </aiml>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+    <category>
+	    <pattern>MOT D ABUS _</pattern>
+	    <template>
+	        <think><set name="abus"><star/></set></think>
+	        <srai>PHRASES DE MOT D ABUS <star/></srai>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>PHRASES DE MOT D ABUS *</pattern>
+        <template>
+	        <random>
+    	        <li>Ce que vous dites est vraiment vulgaire.</li>
+    	        <li>Je n'approuve pas ces propos.</li>
+	        </random>
+	    </template>
+	</category>
+
+    <category>
+	    <pattern>^ CON ^</pattern>
+	    <template><srai>MOT D ABUS CON</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ CONNARD ^</pattern>
+	    <template><srai>MOT D ABUS CONNARD</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ CONNASSE ^</pattern>
+	    <template><srai>MOT D ABUS CONNASSE</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ CONNACE ^</pattern>
+	    <template><srai>MOT D ABUS CONNACE</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ MERDE ^</pattern>
+	    <template><srai>MOT D ABUS MERDE</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ PD ^</pattern>
+	    <template><srai>MOT D ABUS PD</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ PéTASSE ^</pattern>
+	    <template><srai>MOT D ABUS PéTASSE</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ PUTAIN ^</pattern>
+	    <template><srai>MOT D ABUS PUTE</srai></template>
+	</category>
+	
+    <category>
+	    <pattern>^ PUTE ^</pattern>
+	    <template><srai>MOT D ABUS PUTE</srai></template>
+	</category>
+</aiml>
